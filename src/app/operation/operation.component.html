@@ -1,0 +1,11 @@
+<div class="operation container mx-auto px-4 card bg-cyan-700">
+    <span>{{time}}</span> <br>
+    <span>{{firstMember}}</span>
+    <span>{{currentOperator}}</span>
+    <span>{{secondMember}}</span>
+    <span>=</span>
+    <span>?</span>
+    <input type="number" class="form-control" [(ngModel)]="userInput" (keydown.code.enter)="showResult()">
+</div>
+
+<p>{{countFind}}/10</p>
