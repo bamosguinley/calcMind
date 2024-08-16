@@ -1,11 +1,17 @@
-<div class="operation container mx-auto px-4 card bg-cyan-700">
-    <span>{{time}}</span> <br>
-    <span>{{firstMember}}</span>
-    <span>{{currentOperator}}</span>
-    <span>{{secondMember}}</span>
-    <span>=</span>
-    <span>?</span>
-    <input type="number" class="form-control" [(ngModel)]="userInput" (keydown.code.enter)="showResult()">
-</div>
-
-<p>{{countFind}}/10</p>
+@if (oparationNumber>0) {
+    <div class="">
+        <span>{{time}}</span> <br>
+        <span>{{firstMember}}</span>
+        <span>{{currentOperator}}</span>
+        <span>{{secondMember}}</span>
+        <p>Donnez la réponse</p>
+        <input type="number" [(ngModel)]="userInput" (keydown.code.enter)="showResult()"
+         class="block rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+    </div>
+    
+    
+    
+    <p>{{oparationNumber}}</p>
+}@else{
+    <p>{{countFind}}/10</p>
+}

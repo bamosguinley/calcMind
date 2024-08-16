@@ -36,7 +36,21 @@ ngOnInit(){
       this.createOperation();
     }
  }
-
+if (this.oparationNumber>0) {
+  this.opertionInterval=setInterval(()=>{
+  this.time--;
+  if (this.time==0) {
+    this.time=10;
+    this.showResult()
+  }
+  if (this.oparationNumber<=0) {
+    clearInterval(this.opertionInterval);
+  }
+  },1000)
+}else{
+  clearInterval(this.opertionInterval);
+}
+this.oparationNumber--
 }
  createOperation(){
   this.currentOperator=this.operator[Math.floor(Math.random()*this.operator.length)];
@@ -65,11 +79,12 @@ ngOnInit(){
  }
 }
 showResult(){
-  this.makeOperation();
+this.makeOperation();
 if (this.oparationNumber>0) {
   if (this.currentResult==parseInt(this.userInput)) {
     this.countFind++;
     this.userInput='';
+    this.time=10;
     this.createOperation();
   } else{
     this.countFind=this.countFind
@@ -77,5 +92,6 @@ if (this.oparationNumber>0) {
     this.createOperation();
   }
   this.oparationNumber--;
+  this.time=10;
 }
 }}
