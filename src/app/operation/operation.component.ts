@@ -20,22 +20,7 @@ ngOnInit(){
   this.currentOperator=this.operator[Math.floor(Math.random()*this.operator.length)];
   this.firstMember= Math.floor(Math.random()*9)
   this.secondMember= Math.floor(Math.random()*9)
-  switch(this.currentOperator){
-    case '-':
-    if (this.firstMember<this.secondMember) {
-      this.createOperation();
-    }
-    break;
-   case '*':
-    if (this.firstMember===0 && this.secondMember===0) {
-      this.createOperation();
-    }
-    break;
-    case'/':
-    if (this.secondMember===0 || this.firstMember===0 || (this.firstMember/this.secondMember)%2!==0) {
-      this.createOperation();
-    }
- }
+
 if (this.oparationNumber>0) {
   this.opertionInterval=setInterval(()=>{
   this.time--;
@@ -56,9 +41,23 @@ this.oparationNumber--
   this.currentOperator=this.operator[Math.floor(Math.random()*this.operator.length)];
   this.firstMember= Math.floor(Math.random()*9)
   this.secondMember= Math.floor(Math.random()*9)
-
+  switch(this.currentOperator){
+    case '-':
+    if (this.firstMember<this.secondMember) {
+      this.createOperation();
+    }
+    break;
+   case '*':
+    if (this.firstMember===0 && this.secondMember===0) {
+      this.createOperation();
+    }
+    break;
+    case'/':
+    if (this.secondMember===0 || this.firstMember===0 || !Number.isInteger(this.firstMember/this.secondMember)) {
+      this.createOperation();
+    }
+ }
   console.log(this.firstMember+this.currentOperator+ this.secondMember);
-  
  }
  makeOperation(){
   switch(this.currentOperator){
@@ -94,4 +93,12 @@ if (this.oparationNumber>0) {
   this.oparationNumber--;
   this.time=10;
 }
-}}
+}
+restart(){
+  this.countFind=0; 
+  this.time=10;
+this.oparationNumber=10;
+this.userInput='';
+this.ngOnInit();
+}
+} 
