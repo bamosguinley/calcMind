@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calcMind';
+  start:boolean=false;
+
+  getStarded(){
+    this.start=true;
+  }
 }

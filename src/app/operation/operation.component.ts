@@ -95,8 +95,8 @@ if (this.oparationNumber>0) {
 }
 }
 restart(){
-  this.countFind=0; 
-  this.time=10;
+this.countFind=0; 
+this.time=10;
 this.oparationNumber=10;
 this.userInput='';
 this.ngOnInit();
