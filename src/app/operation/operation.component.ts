@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './operation.component.css'
 })
 export class OperationComponent {
- operator:string[]=["+","-","*","/"];
+ operator:string[]=["+","-","x","/"];
  firstMember:number=0;
  secondMember:number=0;
  currentOperator:string='';
@@ -47,7 +47,7 @@ this.oparationNumber--
       this.createOperation();
     }
     break;
-   case '*':
+   case 'x':
     if (this.firstMember===0 && this.secondMember===0) {
       this.createOperation();
     }
@@ -67,7 +67,7 @@ this.oparationNumber--
     case '-':
     this.currentResult=this.firstMember-this.secondMember ;
     break;
-    case '*': 
+    case 'x': 
     this.currentResult=this.firstMember*this.secondMember ;
     break;
     case '/':
