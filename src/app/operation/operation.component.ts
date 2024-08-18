@@ -53,7 +53,7 @@ this.oparationNumber--
     }
     break;
     case'/':
-    if (this.secondMember===0 || this.firstMember===0 || !Number.isInteger(this.firstMember/this.secondMember)) {
+    if (this.secondMember==0 || this.firstMember==0 || !Number.isInteger(this.firstMember/this.secondMember)) {
       this.createOperation();
     }
  }
