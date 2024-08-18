@@ -11,7 +11,7 @@
          class="block w-full  border-t-0 border-l-0 border-r-0  border-b-2 border-white bg-transparent focus:outline-none py-1.5 text-white border-0 outline-transparent " autofocus>
     </div>
 }@else{
-    <div class=" duration-500 border rounded flex items-center justify-center flex-col p-4 " [ngClass]="countFind<5?'bg-red-500':countFind===5?'bg-white':'bg-green-500'">
+    <div class=" duration-500 border rounded flex items-center justify-center flex-col p-4 " [ngClass]="countFind<5?'bg-red-500':countFind===5?'bg-white text-black':'bg-green-500'">
         <p *ngIf="countFind<5"><i class="bi bi-patch-exclamation"></i> Bad, essayez  à nouveau</p>
         <p *ngIf="countFind==5">Pas mal, essayez de mieux faire</p>
         <p *ngIf="countFind==10">Félicitations 👌</p>
